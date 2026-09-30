@@ -29,6 +29,7 @@ const appsRoute = require('../routes/apps.routes');
 const roomRoute = require('../routes/room.routes');
 const bookingRoute = require('../routes/booking.route');
 const reviewRoute = require('../routes/review.routes');
+const { serveUpload } = require('../lib/gridfs.storage');
 
 // load environment variables from .env file
 env.config();
@@ -74,6 +75,7 @@ app.use(express.urlencoded({ extended: true }));
 // response default (welcome) route
 app.get('/', defaultController);
 app.get('/health', (_req, res) => res.status(200).json({ status: 'ok' }));
+app.get('/uploads/:category/:filename', serveUpload);
 
 // sets application API's routes
 app.use('/api/v1', authRoute); // auth routes

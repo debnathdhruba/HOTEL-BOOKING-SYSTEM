@@ -7,8 +7,8 @@
  *
  */
 
-const fs = require('fs');
 const appRoot = require('app-root-path');
+const fs = require('../lib/gridfs.storage');
 const Room = require('../models/room.model');
 const logger = require('../middleware/winston.logger');
 const { errorResponse, successResponse } = require('../configs/app.response');

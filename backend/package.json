@@ -8,6 +8,7 @@
     "dev": "NODE_ENV=development nodemon server.js",
     "prod": "NODE_ENV=production node server.js",
     "seed:rooms": "node scripts/seed-rooms.js",
+    "migrate:uploads": "node scripts/migrate-uploads-to-gridfs.js",
     "lint": "eslint .",
     "test": "jest --runInBand",
     "coverage": "npm run test --coverage --watchAll"
